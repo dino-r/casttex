@@ -1,0 +1,11 @@
+**/*.hi
+**/*.o
+**/*.swp
+**/*.pdf
+**/*.out
+**/*.aux
+**/*.log
+**/*.svg
+**/*.html
+updatesvg
+casttex

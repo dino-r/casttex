@@ -1,0 +1,6 @@
+- add automatic fallback to PNG images
+- add more flexibility for CSS class attributes that are generated
+- implement the counter for externalized files as Monoid (?)
+- add support for commands outside of math equations
+- improve how whitespace is handled in statements like \begin{...} and \end{...}
+- make a distinction between non-externalized environments and externalized environments

@@ -1,0 +1,37 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{hyperref}
+
+
+\begin{document}
+
+%taken from https://en.wikipedia.org/wiki/Lagrangian_mechanics
+
+\section{Lagrangian Mechanics}
+\subsection{Lagrangian and action}
+% this is a comment that is ignored
+The core element of \href{https://en.wikipedia.org/wiki/Lagrangian_mechanics}{Lagrangian mechanics} is the Lagrangian function, which summarizes the dynamics of the entire system in a very simple expression. The physics of analyzing a system is reduced to choosing the most convenient set of generalized coordinates, determining the kinetic and potential energies of the constituents of the system, then writing down the equation for the Lagrangian to use in Lagrange's equations. It is defined by
+$$ L = T -V $$
+where $T$ is the total kinetic energy and $V$ is the total potential energy of the system.
+
+The next fundamental element is the action $\mathcal{S}$, defined as the time integral of the Lagrangian:
+$$\mathcal{S} = \int_{t_1}^{t_2} L\,\mathrm{d}t.$$
+This also contains the dynamics of the system, and has deep theoretical implications (discussed below). Technically action is a functional, rather than a function: its value depends on the full Lagrangian function for all times between $t_1$ and $\bigl. t_2\bigr.$. Its dimensions are the same as angular momentum.
+
+In classical field theory, the physical system is not a set of discrete particles, but rather a continuous field defined over a region of 3d space. Associated with the field is a Lagrangian density $\mathcal{L}(\mathbf{r},t)$ defined in terms of the field and its derivatives at a location $\bigl.\mathbf{r}\bigr.$. The total Lagrangian is then the integral of the Lagrangian density over 3d space (see volume integral):
+ $$L(t) = \int  \mathcal{L}(\mathbf{r},t) \mathrm{d}^3 \mathbf{r}$$
+ where $\bigl.\mathrm{d}^3\mathbf{r}\bigr.$ is a 3d differential volume element, must be used instead. The action becomes an integral over space and time:
+ $$\mathcal{S} = \int_{t_1}^{t_2}\int \mathcal{L}(\mathbf{r},t) \mathrm{d}^3\mathbf{r} \mathrm{d}t.$$
+
+ \subsection{Hamilton's principle of stationary action}
+ Let $q_0$ and $q_1$ be the coordinates at respective initial and final times $t_0$ and $t_1$. Using the calculus of variations, it can be shown that Lagrange's equations are equivalent to Hamilton's principle: The trajectory of the system between $t_0$ and $t_1$ has a stationary action $\mathcal{S}$.
+
+ By stationary, we mean that the action does not vary to first-order from infinitesimal deformations of the trajectory, with the end-points $(q_0, t_0)$ and $(q_1,t_1)$ fixed. Hamilton's principle can be written as: %this is another comment that is ignored
+ $$\delta \mathcal{S} = 0. $$
+ Thus, instead of thinking about particles accelerating in response to applied forces, one might think of them picking out the path with a stationary action.
+
+ Hamilton's principle is sometimes referred to as the principle of least action, however the action functional need only be stationary, not necessarily a maximum or a minimum value. Any variation of the functional gives an increase in the functional integral of the action.
+
+ We can use this principle instead of Newton's Laws as the fundamental principle of mechanics, this allows us to use an integral principle (Newton's Laws are based on differential equations so they are a differential principle) as the basis for mechanics. However it is not widely stated that Hamilton's principle is a variational principle only with holonomic constraints, if we are dealing with nonholonomic systems then the variational principle should be replaced with one involving d'Alembert principle of virtual work. Working only with holonomic constraints is the price we have to pay for using an elegant variational formulation of mechanics.
+
+\end{document}

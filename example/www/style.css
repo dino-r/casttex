@@ -1,0 +1,58 @@
+html {
+  max-width: 550px;
+  margin: 0 auto;
+  background: #002B36;
+  position: relative;
+  color: #839496;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+  font-size: 12pt;
+  line-height: 1.5em;
+  text-align: justify;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  word-break: break-all;
+  word-break: break-word;
+}
+
+p {
+  text-indent: 1em;
+  padding-top: 0em;
+}
+
+
+
+.section {
+   color: #93a1a1;
+   font-size: 18pt;
+   padding-top:1em;
+   padding-bottom:0.4em;
+   border-bottom: 1px #b68900 solid;
+}
+
+.subsection {
+   color: #93a1a1;
+   font-size: 14pt;
+   padding-top:1em;
+}
+
+.eqn {
+   vertical-align: middle;
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+   padding-top: 0.5em;
+   padding-bottom: 0.5em;
+}
+
+.eqninline {
+   vertical-align: middle;
+}
+
+
+.textlink {
+   color: #b68900;
+   text-decoration: none;
+}

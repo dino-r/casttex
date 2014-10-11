@@ -1,0 +1,15 @@
+#IO configuration
+[IO]
+input_directory = ./
+input_file_name = example.tex
+output_directory = www/
+output_file_name = example.html
+
+
+#configuration for generation of standalone TeX files for SVG creation
+[SVG]
+standalone_tex_header = 
+   \documentclass[preview, varwidth, border={0pt 1pt 0pt 0pt}]{standalone}
+   \usepackage{anyfontsize}
+document_commands =
+   \fontsize{14pt}{1em}
