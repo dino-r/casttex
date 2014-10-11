@@ -32,14 +32,14 @@ All you really need is a LaTeX file and a configuration file for CastTex. You ca
    $ casttex
 Thereafter, you can open the file www/example.html in your browser to view the preliminary result.
 
-Note, that CastTex is assumed to integrate into existing workflows. Thus, the generated www/example.html file does not contain any HTML-tags denoting the structure of your website. It merely contains what is assumed to appear somewhere within your <body> tag. The resulting HTML file should therefore be included in the right place via a server-side include or whatever else you deem worthy. 
+Note that CastTex is assumed to integrate into existing workflows. Thus, the generated www/example.html file does not contain any HTML-tags denoting the structure of your website. It merely contains what is assumed to appear somewhere within your <body> tag. The resulting HTML file should therefore be included in the right place via a server-side include or whatever else you deem worthy. 
 
 The advantage of this is that you can create a CSS file for your general appearance and classes for sections, subsections, etc. Then, the generated HTML file will automatically assume this style if it is inlcuded in the body of any of your pages.
 
 However, since no CSS is generated, the equations appear not aligned with the text. Nevertheless, all <img> tags have the class attribute "eqn" or "inlineeqn" which can be used to specify alignment. For the alignment with the surrounding text of inline equations include the following line in your CSS file:
-   .inlineeqn { vertical-align: middle; }
+   .eqninline { vertical-align: middle; }
 
-Note, that the style of the equations themselves, i.e. the style of the SVGs, can not be manipulated directly via a CSS file for reasons that will be explained in the next section.
+Note that the style of the equations themselves, i.e. the style of the SVGs, can not be manipulated directly via a CSS file for reasons that will be explained in the next section.
 
 
 About UpdateSVG
@@ -51,7 +51,7 @@ The UpdateSVG tool, will take a CSS file as its first argument, followed by an a
    $ updatesvg svg.css *.svg
 Open up the same file again and you will see that all contents of svg.css are now within the style tags.
 
-Thus, after changing e.g. colors, UpdateSVG needs to be run to update all SVGs to the new style. Iincluded a makefile in the directory example/www/ that will automatically write a link to the style.css file I provided for testing purposes and write the result to example_with_style.html. Furthermore all SVG files are updated with the style in svg.css. Thus, to see a "real life" integration into a workflow, run
+Thus, after changing e.g. colors, UpdateSVG needs to be run to update all SVGs to the new style. I included a makefile in the directory example/www/ that will automatically write a link to the style.css file I provided for testing purposes into the html contents and write the result to example_with_style.html. Furthermore all SVG files are updated with the style in svg.css. Thus, to see a "real life" integration into a workflow, run
    $ cd example/www
    $ make
 and open up the example_with_style.html file in your browser.
