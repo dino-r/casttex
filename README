@@ -34,9 +34,9 @@ Thereafter, you can open the file www/example.html in your browser to view the p
 
 Note that CastTex is assumed to integrate into existing workflows. Thus, the generated www/example.html file does not contain any HTML-tags denoting the structure of your website. It merely contains what is assumed to appear somewhere within your <body> tag. The resulting HTML file should therefore be included in the right place via a server-side include or whatever else you deem worthy. 
 
-The advantage of this is that you can create a CSS file for your general appearance and classes for sections, subsections, etc. Then, the generated HTML file will automatically assume this style if it is inlcuded in the body of any of your pages.
+The advantage of this is that you can create a CSS file for your general appearance and classes for sections, subsections, etc. Then, the generated HTML file will automatically assume this style if it is included in the body of any of your pages.
 
-However, since no CSS is generated, the equations appear not aligned with the text. Nevertheless, all <img> tags have the class attribute "eqn" or "inlineeqn" which can be used to specify alignment. For the alignment with the surrounding text of inline equations include the following line in your CSS file:
+However, since no CSS is generated, the equations appear not aligned with the text. Nevertheless, all <img> tags have the class attribute "eqn" or "eqninline" which can be used to specify alignment. For the alignment with the surrounding text of inline equations include the following line in your CSS file:
    .eqninline { vertical-align: middle; }
 
 Note that the style of the equations themselves, i.e. the style of the SVGs, can not be manipulated directly via a CSS file for reasons that will be explained in the next section.
