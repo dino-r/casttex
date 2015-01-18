@@ -32,6 +32,8 @@ parseRules =
        try defs
    <|> try style
    <|> try gStyles
+   <|> try pathStyles
+   <|> unmatchedTags
    <|> try other
 
 -- we need the <defs> statement of the SVG file, since we want to insert the style before that
@@ -53,10 +55,21 @@ gStyles =
       char '\"'
       return (Other, "<g")
 
+-- if there's a statement for a colored stroke in a path, we remove it, since it overrides the CSS like style
+pathStyles =
+   do try (string "<path style=\"")
+      options1 <- manyTill anyChar (try (string "stroke:rgb"))
+      many (noneOf ";")
+      char ';'
+      options2 <- many (noneOf "\"")
+      return (Other, "<path style=\"" ++ options1 ++ options2)
+
+unmatchedTags =
+   do char '<'
+      return (Other, "<")
+
 -- everything else within the document, we can just take verbatim
 -- but we need to ensure that we don't parse over statements that we wanted to catch with other parsing rules
 other =
-   do initial <- many (noneOf "<")
-      comchar <- char '<' 
-      following <- try (many1 (noneOf "<"))
-      return (Other, initial ++ (comchar:following) )
+   do str <- many1 (noneOf "<")
+      return (Other, str)
