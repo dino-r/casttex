@@ -1,5 +1,11 @@
 The glorious CastTex
 
+******************************************************************
+*** UpdateSVG has been deprecated in favor of the standalone tool
+*** DyeSVG (https://github.com/dino-r/DyeSVG)
+******************************************************************
+
+
 WARNING: The routines were only tested for my purposes. Also, there are some issues that are not yet resolved. Use at your own risk.
 
 Requirements: 
